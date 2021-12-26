@@ -62,14 +62,13 @@ def main():
 
     print(palabra)
     
-    
+    opciones = (len(palabra))*'_'
 
     while acierto == False and intentos > 0:
         #En esta parte se enuncia el número de intentos, el número de letras que tiene la palabra a adivinar
         #y se empieza a solicitar al usuario que adivine
         print("Tienes ", str(intentos), ' intentos')
-        print("La palabra contiene", len(palabra)-1, "letras.")
-        opciones = (len(palabra)-1)*'_'
+        print("La palabra contiene", len(palabra), "letras.")
         print(opciones)
         
         guess = input("Adivina una letra de la palabra o la palabra completa: ").lower()
@@ -93,7 +92,7 @@ def main():
                 string_list[menor_index] = guess
                 string_list[mayor_index] = guess
                 opciones = "".join(string_list)           
-                print(opciones)
+                #print(opciones)
 
                 
             
@@ -101,7 +100,7 @@ def main():
                 string_list = list(opciones)
                 string_list[menor_index] = guess
                 opciones = "".join(string_list)
-                print(opciones)
+                #print(opciones)
 
         if len(guess) == len(palabra):
             if guess == palabra:
