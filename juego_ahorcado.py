@@ -38,6 +38,8 @@ def obtener_palabra():
             
          
     palabra_juego = random.choice(palabras)  
+    normalizacion = palabra_juego.maketrans('áéíóú','aeiou')
+    palabra_juego = palabra_juego.translate(normalizacion)
 
        
     return palabra_juego
@@ -60,7 +62,7 @@ def main():
     #Variable con el número de intentos 
     intentos = 7 
 
-    print(palabra)
+    #print(palabra)
     
     opciones = (len(palabra))*'_'
 
